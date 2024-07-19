@@ -1,0 +1,7 @@
+101 double 1500.0 1
+102 family 2222.0 1
+23 deluxe 5000.0 1
+24 suite  2250.0 1
+33 family 1110.0 1
+76 double 2050.0 1
+77 deluxe 6000.0 1

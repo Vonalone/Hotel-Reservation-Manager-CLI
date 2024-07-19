@@ -1,0 +1,5 @@
+| Number Room :1| Type Room :double| Price Room :1000.0|
+| Number Room :2| Type Room :family| Price Room :1000.0|
+| Number Room :4| Type Room :suite| Price Room :500.0|
+| Number Room :5| Type Room :deluxe| Price Room :1500.0|
+| Number Room :6| Type Room :simple| Price Room :700.0|
