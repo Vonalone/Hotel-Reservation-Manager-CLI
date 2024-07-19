@@ -1,20 +1,10 @@
 # creation database 
 
-CREATE DATABASE DataHotels;
+CREATE DATABASE DataHotel;
 
 USE DataHotel;
 
 # creation tables
-
-CREATE TABLE room( room_number int not null,id_admin int not null,
-type_room varchar(50) not null,
-available boolean default true,
-night_price decimal(10,2) not null,
-primary key(room_number),
-FOREIGN KEY (id_admin)
-REFERENCES user (user_id)
-ON DELETE CASCADE
-ON UPDATE CASCADE);
 
 CREATE TABLE user(user_id int not null auto_increment,
 first_name varchar(50) not null,
@@ -25,6 +15,16 @@ cin varchar(50) not null unique ,
 phone_number varchar(50) not null,
 is_admin boolean default false,
 primary key(user_id));
+
+CREATE TABLE room( room_number int not null,id_admin int not null,
+type_room varchar(50) not null,
+available boolean default true,
+night_price decimal(10,2) not null,
+primary key(room_number),
+FOREIGN KEY (id_admin)
+REFERENCES user (user_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE);
 
 CREATE TABLE reservation(reserv_id int not null auto_increment,
 user_reserv_id int not null,
@@ -64,12 +64,12 @@ VALUES('Jane', 'Smith', 'jane.smith@example.com', 'anotherpassword', 'CD987654',
 ('Bob', 'Johnson', 'bob.johnson@example.com', 'password456', 'IJ345678', 444555666),
 ('Alice', 'Martin', 'alice.martin@example.com', 'motdepasse123', 'GH789012', '111222333');
 
-INSERT INTO room(room_number,id_admin,type_room,available,night_price)
-values(1,1,"double",true,1000.00),
-(2,1,"family",true,1000.00),
-(4,1,"suite",true,500.00),
-(5,1,"deluxe",false,1500.00),
-(6,1,"simple",false,700.00);
+INSERT INTO room(room_number,id_admin,type_room,night_price)
+values(1,1,"double",1000.00),
+(2,1,"family",1000.00),
+(4,1,"suite",500.00),
+(5,1,"deluxe",1500.00),
+(6,1,"simple",700.00);
 
 INSERT INTO reservation(check_in_date,check_out_date,person_number,user_reserv_id,room_reserv_id)
 VALUES("2024-01-03","2024-01-04",1,3,6),
